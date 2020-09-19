@@ -25,7 +25,7 @@ def hello():
         x = image.img_to_array(img)
         x = np.expand_dims(x, axis=0)
         x = preprocess_input(x)
-        class_labels = {0: 'Cat', 1: 'Dog'}
+        class_labels = {0: 'Dog', 1: 'Cat'}
         prediction = image_classifier.predict_classes(x)
         percent_values = prediction.tolist()   
         guess = class_labels[prediction[0][0]] 
