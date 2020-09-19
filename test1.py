@@ -3,11 +3,11 @@ from flask import jsonify
 from flask import Flask
 from flask import render_template
 from flask import request,redirect
-import cv2
-import tensorflow as tf
+# import cv2
+# import tensorflow as tf
 from keras.models import load_model
-import keras
-from tensorflow import keras
+# import keras
+# from tensorflow import keras
 from keras.applications.resnet50 import preprocess_input, decode_predictions
 import os
 from keras.preprocessing import image
@@ -32,7 +32,7 @@ def hello():
         x = image.img_to_array(img)
         x = np.expand_dims(x, axis=0)
         x = preprocess_input(x)
-        model1 = tf.keras.models.load_model('dogcat_model_bak.h5')
+        model1 =load_model('dogcat_model_bak.h5')
         prediction=model1.predict([x])
         proba=model1.predict_proba([x])
         #return(categories[int(prediction[0][0])])
